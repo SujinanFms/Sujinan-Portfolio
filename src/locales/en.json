@@ -1,0 +1,26 @@
+{
+  "Home": {
+    "welcome": "Welcome to my Portfolio",
+    "intro": "I am a Frontend Developer passionate about creating clean and scalable web applications."
+  },
+  "Profile": {
+    "name": "Sujinan Julavittayanukul",
+    "position": "Front-end Developer"
+  },
+  "Contact": {
+    "phone": "phone number"
+  },
+  "Social": {
+    "phone": "Phone number copied",
+    "email": "Email copied",
+    "err": "Unable to copy data"
+  },
+  "TagProfile": {
+    "age": "age",
+    "residence": "Residence",
+    "province": "Nonthaburi",
+    "freelance": "Freelance",
+    "address": "Address",
+    "dorm": "Richly Residence"
+  }
+}
