@@ -1,4 +1,4 @@
-// next-intl.config.ts
+//next-i18next.config.js
 const nextI18NextConfig = {
   i18n: {
     defaultLocale: "th",
@@ -6,7 +6,6 @@ const nextI18NextConfig = {
   },
   localePath: "./public/locales",
   reloadOnPrerender: true,
-  timeZone: "Asia/Bangkok", // ✅ เพิ่มตรงนี้
 };
 
 export default nextI18NextConfig;

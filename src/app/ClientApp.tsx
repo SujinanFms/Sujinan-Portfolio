@@ -1,9 +1,11 @@
+// /src/app/ClientApp.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import AppLayout from "@/components/AppLayout";
-import { App, ConfigProvider } from "antd";
+import { App, ConfigProvider, Spin } from "antd";
+// import thMessages from "../../public/locales/th.json";
 
 export default function ClientApp({
   children,
@@ -12,20 +14,43 @@ export default function ClientApp({
   children: React.ReactNode;
   locale: string;
 }) {
-  const [messages, setMessages] = useState<Record<string, any>>({});
+  const [messages, setMessages] = useState<Record<string, unknown> | null>(
+    null
+  );
 
   useEffect(() => {
-    const loadMessages = async () => {
+    async function loadMessages() {
       try {
-        const localeMessages = await import(`@/locales/${locale}.json`);
-        setMessages(localeMessages.default);
+        const res = await fetch(`/locales/${locale}.json`);
+        if (!res.ok) throw new Error("Failed to fetch");
+        const data = await res.json();
+        setMessages(data);
       } catch (error) {
-        const fallbackMessages = await import("@/locales/en.json");
-        setMessages(fallbackMessages.default);
+        console.error("❌ Error loading messages:", error);
       }
-    };
+    }
+
     loadMessages();
   }, [locale]);
+
+  if (!messages) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <Spin size="large" />
+      </div>
+    );
+  }
+
+  console.log("messages", messages);
+
+  console.log("locale", locale);
 
   return (
     <ConfigProvider
