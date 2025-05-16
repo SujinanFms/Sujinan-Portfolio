@@ -1,11 +1,6 @@
 // /components/AppLayout.tsx
 
 import React, { ReactNode } from "react";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
 import { ConfigProvider, Layout, theme } from "antd";
 import AppFooter from "./AppFooter";
 
@@ -13,17 +8,6 @@ import "../styles/globals.css";
 import Resume from "./sidebar/resume";
 
 const { Header, Content, Footer, Sider } = Layout;
-
-const items = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  UserOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
-}));
 
 const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   const {
@@ -57,15 +41,9 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
           width={268}
         >
           <Resume />
-          {/* <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["4"]}
-          items={items}
-        /> */}
         </Sider>
+
         <Layout>
-          {/* <Header style={{ padding: 0, background: colorBgContainer }} /> */}
           <Header style={{ padding: 0, background: colorBgContainer }}>
             Header
           </Header>

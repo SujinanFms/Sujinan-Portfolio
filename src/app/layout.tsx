@@ -16,12 +16,11 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
-  const locale = params?.locale || "th";
+  // ตั้งค่า locale เริ่มต้นเป็น "th" ที่นี่
+  const locale = process.env.NEXT_PUBLIC_DEFAULT_LOCALE || "th"; // ใช้ locale ที่กำหนดใน .env หรือ fallback เป็น "th"
 
   return (
     <html lang={locale} className={shareTech.className}>
