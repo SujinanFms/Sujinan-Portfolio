@@ -6,10 +6,12 @@
   "Profile": {
     "name": "Sujinan Julavittayanukul",
     "position": "Front-end Developer",
-    "introduction": "A passionate frontend web developer with over 2 years of experience in building modern web applications using technologies such as React.js, Next.js, TypeScript, and JavaScript. Skilled in designing and developing responsive UI/UX and integrating efficiently with RESTful APIs. Experienced in cross-functional collaboration with UX/UI designers, system analysts, and project managers. Well-versed in Agile/Scrum workflow, with strong problem-solving skills and a fast learning ability for new technologies. Committed to delivering high-quality, user-friendly, and scalable web applications."
+    "introduction": "A passionate frontend web developer with 2 years of experience in building modern web applications using technologies such as React.js, Next.js, TypeScript, and JavaScript. Skilled in designing and developing responsive UI/UX and integrating efficiently with RESTful APIs. Experienced in cross-functional collaboration with UX/UI designers, system analysts, and project managers. Well-versed in Agile/Scrum workflow, with strong problem-solving skills and a fast learning ability for new technologies. Committed to delivering high-quality, user-friendly, and scalable web applications.",
+    "hiring": "HIRE ME"
   },
   "Contact": {
-    "phone": "phone number"
+    "phone": "phone number",
+    "email": "angun.sujinan@gmail.com"
   },
   "Social": {
     "phone": "Phone number copied",
@@ -42,5 +44,80 @@
     "communication": "Communication",
     "problemSolving": "Problem Solving",
     "fastLearning": "Fast Learner"
+  },
+  "Services": {
+    "title": "My Services",
+    "subtitle": "What I Can Do",
+    "webDev": {
+      "title": "Web Development",
+      "description": "Build beautiful, functional, and responsive websites."
+    },
+    "uiuxDesign": {
+      "title": "UI/UX Design",
+      "description": "Design user-friendly and visually appealing interfaces."
+    },
+    "responsiveDesign": {
+      "title": "Responsive Design",
+      "description": "Ensure optimal user experience across all devices."
+    },
+    "apiIntegration": {
+      "title": "API Integration",
+      "description": "Integrate websites with external systems via RESTful APIs."
+    }
+  },
+  "Education": {
+    "title": "Education",
+    "bachelor": {
+      "degree": "B.B.A. in Information Systems",
+      "institution": "Faculty of Management Sciences, Prince of Songkla University",
+      "year": "2016 – 2019",
+      "gpa": "GPA: 3.21"
+    },
+    "highschool": {
+      "degree": "Secondary School",
+      "institution": "Kantangpittayakom School",
+      "year": "2010 – 2015",
+      "gpa": "GPA: 3.65"
+    }
+  },
+  "Work": {
+    "title": "Work Experience",
+    "frontend": {
+      "title": "Frontend Developer",
+      "company": "Techwave International Co., Ltd.",
+      "duration": "May 2024 – Present",
+      "desc1": "Built business platforms like Portfolio, Appraisal, and Booking Systems using React.js and TypeScript.",
+      "desc2": "Developed seller/admin eCommerce systems with Next.js and improved UX.",
+      "desc3": "Created a QC Management Tool for defect tracking across teams using Next.js.",
+      "desc4": "Delivered a fast one-page corporate site using Next.js and TypeScript.",
+      "desc5": "Worked with ReactJS, Tailwind, Chart.js, media APIs, and integrated APIs via Axios."
+    },
+    "intern": {
+      "title": "IT Support Intern",
+      "company": "IT-Center, Faculty of Pharmacy, PSU",
+      "duration": "June – July 2020",
+      "desc1": "Maintained and troubleshooted hardware/software internally.",
+      "desc2": "Developed an internship system using PHP and MySQL."
+    }
+  },
+  "Portfolio": {
+    "projects": {
+      "corpWebsite": {
+        "title": "Corporate Website",
+        "description": "Developed a responsive one-page site for charoenplook.co.th using Next.js and TypeScript."
+      },
+      "ecommerce": {
+        "title": "eCommerce Solutions",
+        "description": "Built platforms for sellers/admins using Next.js and TypeScript for a seamless shopping experience."
+      },
+      "qcTool": {
+        "title": "QC Management Tool",
+        "description": "Created a defect tracking system for multiple teams to streamline quality control."
+      },
+      "business": {
+        "title": "Business Platforms",
+        "description": "Built booking, appraisal, and portfolio systems with React.js and TypeScript."
+      }
+    }
   }
 }

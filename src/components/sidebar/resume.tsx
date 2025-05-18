@@ -1,4 +1,14 @@
-import { App, Button, Col, Divider, Flex, message, Row, Tag } from "antd";
+import {
+  App,
+  Button,
+  Col,
+  Divider,
+  Flex,
+  message,
+  Row,
+  Tag,
+  Tooltip,
+} from "antd";
 import Image from "next/image";
 import React from "react";
 import { FacebookFilled, MailFilled, PhoneFilled } from "@ant-design/icons";
@@ -19,9 +29,9 @@ const Resume = () => {
 
       // แสดงข้อความตามประเภท
       if (type === "phone") {
-        message.success(t("Contact.phone"));
+        message.success(t("Social.phone"));
       } else if (type === "email") {
-        message.success(t("Contact.email"));
+        message.success(t("Social.email"));
       }
     } catch (err) {
       console.log("err", err);
@@ -86,18 +96,23 @@ const Resume = () => {
               icon={<FacebookFilled />}
               onClick={() => window.open(fbUrl, "_blank")}
             />
-            <Button
-              type="primary"
-              shape="circle"
-              icon={<PhoneFilled />}
-              onClick={() => handleCopy(phoneNumber, "phone")}
-            />
-            <Button
-              type="primary"
-              shape="circle"
-              icon={<MailFilled />}
-              onClick={() => handleCopy(email, "email")}
-            />
+            <Tooltip placement="bottom" title={t("Contact.phone")}>
+              <Button
+                type="primary"
+                shape="circle"
+                icon={<PhoneFilled />}
+                onClick={() => handleCopy(phoneNumber, "phone")}
+              />
+            </Tooltip>
+
+            <Tooltip placement="bottom" title={t("Contact.email")}>
+              <Button
+                type="primary"
+                shape="circle"
+                icon={<MailFilled />}
+                onClick={() => handleCopy(email, "email")}
+              />
+            </Tooltip>
           </Flex>
 
           <Divider />

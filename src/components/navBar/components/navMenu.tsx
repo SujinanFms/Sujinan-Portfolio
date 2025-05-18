@@ -1,17 +1,25 @@
 // src/components/navBar/components/navMenu.tsx
 import { Anchor } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const NavMenu = () => {
+  const [container, setContainer] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    // หาตัว scroll container ที่เป็น Content
+    const contentContainer = document.querySelector(".ant-layout-content");
+    setContainer(contentContainer as HTMLElement);
+  }, []);
+
   return (
     <Anchor
       direction="horizontal"
       affix={false}
+      getContainer={() => container || window}
       style={{ display: "flex", gap: "16px" }}
       offsetTop={64} // ความสูงของ header
       items={[
         { key: "home", href: "#home", title: "Home" },
-        { key: "intro", href: "#intro", title: "แนะนำตัว" },
         { key: "skills", href: "#skills", title: "Skills" },
         { key: "services", href: "#services", title: "Services" },
         { key: "education", href: "#education", title: "Education" },
