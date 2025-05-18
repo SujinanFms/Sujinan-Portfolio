@@ -1,22 +1,17 @@
 // /src/app/ClientApp.tsx
 "use client";
 
-import { useState, useEffect } from "react";
-import { NextIntlClientProvider } from "next-intl";
-import AppLayout from "@/components/AppLayout";
-import { App, ConfigProvider, Spin } from "antd";
-// import thMessages from "../../public/locales/th.json";
+import { useEffect, useState } from "react";
+import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 
-export default function ClientApp({
-  children,
-  locale,
-}: {
-  children: React.ReactNode;
-  locale: string;
-}) {
-  const [messages, setMessages] = useState<Record<string, unknown> | null>(
-    null
-  );
+import { App, ConfigProvider, Spin } from "antd";
+
+import AppLayout from "components/AppLayout";
+import { LocaleProvider, useLocale } from "context/LocaleContext";
+
+function InnerClientApp({ children }: { children: React.ReactNode }) {
+  const { locale } = useLocale();
+  const [messages, setMessages] = useState<AbstractIntlMessages | null>(null);
 
   useEffect(() => {
     async function loadMessages() {
@@ -48,17 +43,11 @@ export default function ClientApp({
     );
   }
 
-  console.log("messages", messages);
-
-  console.log("locale", locale);
-
   return (
     <ConfigProvider
       theme={{
         components: {
-          Layout: {
-            siderBg: "#ffffff",
-          },
+          Layout: { siderBg: "#ffffff" },
           Button: {
             colorPrimary: "var(--color-primary)",
             colorPrimaryHover: "var(--color-hover)",
@@ -72,6 +61,14 @@ export default function ClientApp({
         </NextIntlClientProvider>
       </App>
     </ConfigProvider>
+  );
+}
+
+export default function ClientApp({ children }: { children: React.ReactNode }) {
+  return (
+    <LocaleProvider>
+      <InnerClientApp>{children}</InnerClientApp>
+    </LocaleProvider>
   );
 }
 

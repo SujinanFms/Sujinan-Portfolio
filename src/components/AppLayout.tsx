@@ -1,18 +1,29 @@
-// /components/AppLayout.tsx
+// /src/components/AppLayout.tsx
 
 import React, { ReactNode } from "react";
-import { ConfigProvider, Layout, theme } from "antd";
+import { ConfigProvider, Layout, Space, theme } from "antd";
 import AppFooter from "./AppFooter";
 
 import "../styles/globals.css";
 import Resume from "./sidebar/resume";
+import SwitchLanguage from "./navBar/components/switchLanguage";
+import NavMenu from "./navBar/components/navMenu";
 
 const { Header, Content, Footer, Sider } = Layout;
+
+const siderStyle: React.CSSProperties = {
+  height: "100dvh",
+  position: "sticky",
+  insetInlineStart: 0,
+  top: 0,
+  bottom: 0,
+};
 
 const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+  console.log("AppLayout children:", children);
 
   return (
     <ConfigProvider
@@ -25,10 +36,17 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
             colorPrimary: "var(--color-primary)",
             colorPrimaryHover: "var(--color-hover)",
           },
+          Switch: {
+            colorPrimary: "var(--color-primary)",
+            colorPrimaryHover: "var(--color-second)",
+          },
+          Divider: {
+            marginLG: 14,
+          },
         },
       }}
     >
-      <Layout style={{ height: "100dvh" }}>
+      <Layout hasSider>
         <Sider
           breakpoint="lg"
           collapsedWidth="0"
@@ -39,19 +57,33 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
             console.log(collapsed, type);
           }}
           width={268}
+          style={siderStyle}
         >
           <Resume />
         </Sider>
 
         <Layout>
-          <Header style={{ padding: 0, background: colorBgContainer }}>
-            Header
+          <Header
+            style={{
+              padding: "0 24px",
+              background: colorBgContainer,
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+            }}
+          >
+            <Space>
+              {/* Menu */}
+              <NavMenu />
+              {/* เปลี่ยนภาษา */}
+              <SwitchLanguage />
+            </Space>
           </Header>
-          <Content style={{ margin: "24px 16px 0" }}>
+          <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
             <div
               style={{
                 padding: 24,
-                minHeight: 360,
+                // minHeight: 360,
                 background: colorBgContainer,
                 borderRadius: borderRadiusLG,
               }}
