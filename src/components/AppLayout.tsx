@@ -62,7 +62,7 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
           <Resume />
         </Sider>
 
-        <Layout>
+        <Layout style={{ minHeight: "100vh", overflow: "auto" }}>
           <Header
             style={{
               padding: "0 24px",
@@ -79,12 +79,11 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
               <SwitchLanguage />
             </Space>
           </Header>
-          <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+          <Content style={{ margin: "24px 16px 0" }}>
             <div
               style={{
-                padding: 24,
                 // minHeight: 360,
-                background: colorBgContainer,
+                // background: colorBgContainer,
                 borderRadius: borderRadiusLG,
               }}
             >
