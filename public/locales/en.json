@@ -5,7 +5,8 @@
   },
   "Profile": {
     "name": "Sujinan Julavittayanukul",
-    "position": "Front-end Developer"
+    "position": "Front-end Developer",
+    "introduction": "A passionate frontend web developer with over 2 years of experience in building modern web applications using technologies such as React.js, Next.js, TypeScript, and JavaScript. Skilled in designing and developing responsive UI/UX and integrating efficiently with RESTful APIs. Experienced in cross-functional collaboration with UX/UI designers, system analysts, and project managers. Well-versed in Agile/Scrum workflow, with strong problem-solving skills and a fast learning ability for new technologies. Committed to delivering high-quality, user-friendly, and scalable web applications."
   },
   "Contact": {
     "phone": "phone number"
@@ -19,8 +20,27 @@
     "age": "age",
     "residence": "Residence",
     "province": "Nonthaburi",
-    "freelance": "Freelance",
+    "jobType": "Job Preference",
+    "fullTime": "Full-time",
     "address": "Address",
     "dorm": "Richly Residence"
+  },
+  "Section": {
+    "languages": "Languages",
+    "skills": "Skills"
+  },
+  "Language": {
+    "thai": "Thai",
+    "english": "English",
+    "advanced": "Advanced",
+    "intermediate": "Intermediate"
+  },
+  "Skills": {
+    "technical": "Technical Skills",
+    "soft": "Soft Skills",
+    "teamwork": "Teamwork",
+    "communication": "Communication",
+    "problemSolving": "Problem Solving",
+    "fastLearning": "Fast Learner"
   }
 }

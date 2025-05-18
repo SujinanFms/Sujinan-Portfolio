@@ -1,9 +1,12 @@
-import React from 'react'
+// app/page.tsx
+"use client";
 
-const page = () => {
+import ContentPage from "components/navBar/components/content";
+
+export default function HomePage() {
   return (
-    <div>page</div>
-  )
+    <div>
+      <ContentPage />
+    </div>
+  );
 }
-
-export default page
